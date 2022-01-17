@@ -28,7 +28,7 @@ const DropdownElement = ({
               className="dropdownItem"
               eventKey="1"
               key={item.id}
-              active={currentValue === item.title}
+              active={currentValue.find((value) => value === item.title)}
             >
               {item.title}
             </Dropdown.Item>

@@ -1,6 +1,8 @@
 .mainContainer {
-  width: 60vw;
-  height: 70vh;
+  min-width: 60vw;
+  width: auto;
+  min-height: 70vh;
+  height: auto;
   background-color: #ffffff;
   color: #000000;
   border-radius: 14px;
