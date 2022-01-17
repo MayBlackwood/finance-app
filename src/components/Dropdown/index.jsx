@@ -8,6 +8,8 @@ const DropdownElement = ({
   variant = 'Primary',
   items = [],
   title = 'Select',
+  handleCategoryChange,
+  currentValue,
 }) => {
   return (
     <>
@@ -16,16 +18,22 @@ const DropdownElement = ({
         key={variant}
         id={`dropdown-variants-${variant}`}
         variant={variant.toLowerCase()}
-        title={variant}
+        title={title}
         className="dropdownContainer"
       >
-        <Dropdown.Item className="dropdownItem" eventKey="1">
-          Action
-        </Dropdown.Item>
-        {/* <Dropdown.Item eventKey="2">Another action</Dropdown.Item>
-        <Dropdown.Item eventKey="3" active>
-          Active Item
-        </Dropdown.Item> */}
+        {items.map((item) => {
+          return (
+            <Dropdown.Item
+              onClick={handleCategoryChange}
+              className="dropdownItem"
+              eventKey="1"
+              key={item.id}
+              active={currentValue === item.title}
+            >
+              {item.title}
+            </Dropdown.Item>
+          );
+        })}
       </DropdownButton>
     </>
   );
