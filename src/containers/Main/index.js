@@ -20,7 +20,17 @@ const Main = () => {
   }, [activeCategories]);
 
   const handleCategoryChange = (e) => {
-    setActiveCategories([...activeCategories, e.target.innerHTML]);
+    const newElement = activeCategories.find(
+      (item) => item === e.target.innerHTML,
+    );
+
+    if (newElement) {
+      setActiveCategories(
+        activeCategories.filter((el) => el !== e.target.innerHTML),
+      );
+    } else {
+      setActiveCategories([...activeCategories, e.target.innerHTML]);
+    }
   };
 
   return (
