@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import DropdownElement from './../../components/Dropdown';
+import DropdownElement from '../../components/Dropdown';
 import PieChart from '../../components/PieChart';
-import { categories } from './../../tempData/categories';
+import { categories } from '../../tempData/categories';
 import './styles.scss';
 
-const Main = () => {
+const Categories = () => {
   const [activeCategories, setActiveCategories] = useState([]);
   const [graphData, setGraphData] = useState([]);
 
@@ -50,4 +50,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default Categories;

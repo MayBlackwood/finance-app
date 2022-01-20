@@ -4,6 +4,9 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { chartColors } from './colors';
 import './styles.scss';
 
+// Legend
+// https://www.chartjs.org/docs/3.1.0/samples/legend/html.html
+
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 const PieChart = ({ chartTitle, graphData }) => {
