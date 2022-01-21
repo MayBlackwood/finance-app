@@ -12,30 +12,49 @@
   padding: 20px 30px;
 }
 
+.username{
+  width: 5em;
+  display: flex;
+  padding: 0.3em;
+  font-size: 28px;
+  align-items: center;
+  text-align: center;
+}
+
+.avatarContainer{
+  width: 3em;
+}
+
 .profileHeader {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  border: 2px solid salmon;
+  border: 2px solid rgb(32, 157, 179);
   border-radius: 6px;
-  padding: 20px 25px;
+  padding: 0.3em;
   margin: 15px 0;
+
 }
 
 .listItem {
-  border: 2px solid blueviolet;
+  border: 2px solid rgb(32, 157, 179);
   border-radius: 4px;
   margin-bottom: 10px;
   padding: 5px;
-  background-color: rgba(137, 43, 226, 0.582);
+  background-color:rgb(68, 198, 221);
   color: white;
   cursor: pointer;
 
   &:hover {
     color: gainsboro;
     border-color: rgb(214, 190, 236);
-    background-color: rgba(178, 72, 228, 0.582);
+    background-color: rgb(39, 189, 216);
   }
+}
+
+.categoriesList {
+  height: 40vh;
+  overflow: scroll;
 }
 
 a {
