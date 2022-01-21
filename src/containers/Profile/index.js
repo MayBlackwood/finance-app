@@ -12,9 +12,9 @@ const Profile = () => {
   const [dataList, setDataList] = useState(null);
 
   const getDataList = async () => {
-    const data = await axios({
+    const { data } = await axios({
       method: 'GET',
-      url: 'https://glacial-fjord-36071.herokuapp.com/api/v1/exp_list',
+      url: LIST_API,
       headers: {
         'Content-Type': 'application/json',
         'Access-Control-Allow-Origin': '*',
@@ -23,8 +23,7 @@ const Profile = () => {
       },
     });
 
-    console.log('data', data.data);
-    setDataList([1, 2, 4]);
+    setDataList(data);
   };
 
   useEffect(() => {
@@ -41,10 +40,10 @@ const Profile = () => {
       <div className="categoriesList">
         {!dataList && 'No data'}
         {dataList &&
-          dataList.map((item) => {
+          dataList.map(({ id, title, categories }) => {
             return (
-              <Link to={`/categories/${1}`} key={1}>
-                <div className="listItem">{'Title 1'}</div>
+              <Link to={`/categories/${id}`} key={id}>
+                <div className="listItem">{title}</div>
               </Link>
             );
           })}
