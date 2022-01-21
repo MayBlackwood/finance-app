@@ -6,6 +6,7 @@ import PieChart from '../../components/PieChart';
 import { categories } from '../../tempData/categories';
 import { LIST_API } from '../../constants';
 import './styles.scss';
+import { Profile } from '../Profile';
 
 const CategoriesList = () => {
   const [activeCategories, setActiveCategories] = useState([]);
@@ -16,7 +17,9 @@ const CategoriesList = () => {
   // { label: 'item', value: 12 },
 
   const [categories, setCategories] = useState(null);
+  const [listTitle, setListTitle] = useState(null);
   const { id } = useParams();
+
 
   const addGraphData = (data) => {
     setGraphData(data);
@@ -70,8 +73,33 @@ const CategoriesList = () => {
     setCategories(newCategories);
   };
 
+  const total = async(categories) => {
+    categories.reduce(function(acc, current){
+      return acc + current.outcomeSum
+    },0)
+  }; 
+
+  const getListTitleById = async (listId) => {
+    const { data } = await axios({
+      method: 'GET',
+      url: `${LIST_API}/${listId}`,
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
+        Authorization:
+          'eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDI3ODcxNjJ9.fCk3Gmu0EInpzPRRBQNYf_zbAFG27Hb230Lbmfyv0pU',
+      },
+    });
+
+    setListTitle(data.title);
+  };
+
   useEffect(() => {
-    console.log('categories', categories);
+    getListTitleById(id);
+  },[id])
+
+
+  useEffect(() => {
     if (categories) {
       const chartData = categories.map((category) => {
         return { label: category.title, value: category.outcomeSum };
@@ -88,7 +116,7 @@ const CategoriesList = () => {
   return (
     <div className="outcomeContainer">
       <div className="outcomeDataContainer">
-        <h4>Outcomes | {id || null}</h4>
+        <h4> { listTitle || null} | {id || null}</h4>
         <hr className="divider"></hr>
 
         <div className="list">
@@ -105,9 +133,9 @@ const CategoriesList = () => {
       </div>
       <div className="outcomeChartContainer">
         <div>{activeCategories ? activeCategories.join(' ,') : 'None'}</div>
-        <div>Category id: {id || null}</div>
         <div>
-          <PieChart graphData={graphData} />
+          <div>Total expenses: { total || null } peso!</div> 
+         <PieChart graphData={graphData} />
         </div>
       </div>
     </div>

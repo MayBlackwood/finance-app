@@ -32,7 +32,6 @@ const Profile = () => {
 
   return (
     <div className="profileContainer">
-      <h2>Profile</h2>
       <div className="profileHeader">
         <Avatar altImg={userName} />
         <div className="username">{userName}</div>
@@ -47,6 +46,7 @@ const Profile = () => {
               </Link>
             );
           })}
+
         <PlusButton />
       </div>
     </div>
