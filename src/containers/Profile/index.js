@@ -12,19 +12,18 @@ const Profile = () => {
   const [dataList, setDataList] = useState(null);
 
   const getDataList = async () => {
-    // const data = await axios({
-    //   method: 'GET',
-    //   url: LIST_API,
-    //   // url: 'https://glacial-fjord-36071.herokuapp.com/api/v1/exp_list',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //     'Access-Control-Allow-Origin': '*',
-    //     Authorization:
-    //       'eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDI3ODcxNjJ9.fCk3Gmu0EInpzPRRBQNYf_zbAFG27Hb230Lbmfyv0pU',
-    //   },
-    // });
+    const data = await axios({
+      method: 'GET',
+      url: 'https://glacial-fjord-36071.herokuapp.com/api/v1/exp_list',
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
+        Authorization:
+          'eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDI3ODcxNjJ9.fCk3Gmu0EInpzPRRBQNYf_zbAFG27Hb230Lbmfyv0pU',
+      },
+    });
 
-    // console.log('data', data);
+    console.log('data', data.data);
     setDataList([1, 2, 4]);
   };
 
