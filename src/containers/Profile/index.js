@@ -42,7 +42,7 @@ const Profile = () => {
         {dataList &&
           dataList.map(({ id, title, categories }) => {
             return (
-              <Link to={`/categories/${id}`} key={id}>
+              <Link to={`/list/${id}`} key={id}>
                 <div className="listItem">{title}</div>
               </Link>
             );

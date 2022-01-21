@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import DropdownElement from '../../components/Dropdown';
-import PieChart from './../../components/PieChart';
+import PieChart from '../../components/PieChart';
 import { categories } from '../../tempData/categories';
 import './styles.scss';
 
-const Categories2 = () => {
+const CategoriesList = () => {
   const [activeCategories, setActiveCategories] = useState([]);
   const [graphData, setGraphData] = useState([
     { label: 'item', value: 12 },
@@ -58,4 +58,4 @@ const Categories2 = () => {
   );
 };
 
-export default Categories2;
+export default CategoriesList;
