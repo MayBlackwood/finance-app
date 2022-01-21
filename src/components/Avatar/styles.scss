@@ -1,0 +1,10 @@
+.avatarContainer,
+.avatarImg {
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+}
+
+.avatarImg {
+  object-fit: contain;
+}

@@ -1,0 +1,11 @@
+.dropdownContainer {
+  width: 300px;
+
+  :focus {
+    box-shadow: none !important;
+  }
+}
+
+.dropdownItem {
+  width: 300px !important;
+}
