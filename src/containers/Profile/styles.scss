@@ -1,4 +1,6 @@
 .profileContainer {
+  display: flex;
+  flex-direction: column;
   min-width: 60vw;
   width: auto;
   min-height: 70vh;
@@ -8,4 +10,34 @@
   border-radius: 14px;
   box-shadow: 0px 0px 10px 0px rgba(34, 60, 80, 0.6) inset;
   padding: 20px 30px;
+}
+
+.profileHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border: 2px solid salmon;
+  border-radius: 6px;
+  padding: 20px 25px;
+  margin: 15px 0;
+}
+
+.listItem {
+  border: 2px solid blueviolet;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  padding: 5px;
+  background-color: rgba(137, 43, 226, 0.582);
+  color: white;
+  cursor: pointer;
+
+  &:hover {
+    color: gainsboro;
+    border-color: rgb(214, 190, 236);
+    background-color: rgba(178, 72, 228, 0.582);
+  }
+}
+
+a {
+  text-decoration: none !important;
 }

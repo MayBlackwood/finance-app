@@ -1,5 +1,12 @@
-.mainContainer {
-  min-width: 60vw;
+.outcomeContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.outcomeDataContainer,
+.outcomeChartContainer {
+  // min-width: 60vw;
   width: auto;
   min-height: 70vh;
   height: auto;
@@ -8,4 +15,9 @@
   border-radius: 14px;
   box-shadow: 0px 0px 10px 0px rgba(34, 60, 80, 0.6) inset;
   padding: 20px 30px;
+  margin-right: 20px;
+}
+
+.divider {
+  border: 2px solid black;
 }
