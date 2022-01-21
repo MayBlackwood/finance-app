@@ -7,9 +7,9 @@ import { Dropdown, DropdownButton, ButtonGroup } from 'react-bootstrap';
 const DropdownElement = ({
   variant = 'Primary',
   items = [],
-  title = 'Select',
+  title,
   handleCategoryChange,
-  currentValue,
+  currentValue = items,
 }) => {
   return (
     <>
@@ -28,9 +28,9 @@ const DropdownElement = ({
               className="dropdownItem"
               eventKey="1"
               key={item.id}
-              active={currentValue.find((value) => value === item.title)}
+              active={currentValue.find((value) => value === item.name)}
             >
-              {item.title}
+              {item.name}
             </Dropdown.Item>
           );
         })}

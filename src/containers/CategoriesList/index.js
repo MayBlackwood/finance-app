@@ -6,7 +6,6 @@ import PieChart from '../../components/PieChart';
 import { categories } from '../../tempData/categories';
 import { LIST_API } from '../../constants';
 import './styles.scss';
-import { Profile } from '../Profile';
 
 const CategoriesList = () => {
   const [activeCategories, setActiveCategories] = useState([]);
@@ -124,9 +123,7 @@ const CategoriesList = () => {
           {categories &&
             categories.map(({ id, title, items }) => {
               return (
-                <div className="listItem" key={id}>
-                  {title}
-                </div>
+                <DropdownElement title={title} items={items} />
               );
             })}
         </div>

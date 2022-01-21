@@ -53,7 +53,7 @@ const PieChart = ({ chartTitle, graphData }) => {
   return (
     <>
       {chartTitle && <h3>{chartTitle} </h3>}
-      <div class="pieContainer">
+      <div className="pieContainer">
         <Pie data={data} />
       </div>
     </>
